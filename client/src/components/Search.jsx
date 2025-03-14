@@ -1,9 +1,15 @@
 import React from 'react'
 import { IoSearch } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
 
 function Search() {
+  const navigate = useNavigate()
+
+  const redirectToSearchPage = ()=>{
+    navigate("/search")
+  }
   return (
     <div className='w-full  min-w-[300px] lg:min-w-[420px] h-11 lg:h-12 rounded-lg border overflow-hidden flex items-center text-neutral-500 bg-slate-50 group focus-within:border-primary-200 '>
       <div>
@@ -13,7 +19,7 @@ function Search() {
       </div>
 
      <div className='w-full h-full'>
-        <div  className='w-full h-full flex items-center'>
+     <div onClick={redirectToSearchPage} className='w-full h-full flex items-center'>
 
             <TypeAnimation
                                 sequence={[
